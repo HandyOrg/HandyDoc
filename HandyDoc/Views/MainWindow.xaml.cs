@@ -18,6 +18,7 @@ namespace HandyDoc.Views
         public MainWindow()
         {
             InitializeComponent();
+            Instance = this;
             cmbLang.SelectedIndex = GlobalDataHelper<AppConfig>.Config.Lang.Contains("English") ? 0 : 1;
 
             GetItemsForSearch();
