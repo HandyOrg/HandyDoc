@@ -1,8 +1,0 @@
-﻿<UserControl x:Class="HandyDoc.Views.Markdown"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:prism="http://prismlibrary.com/"
-             xmlns:controls="http://schemas.modernwpf.com/toolkit/controls"
-             prism:ViewModelLocator.AutoWireViewModel="True">
-    <controls:MarkdownTextBlock Text="{Binding Message}"/>
-</UserControl>

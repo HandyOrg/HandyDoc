@@ -1,34 +1,14 @@
-﻿using HandyControl.Controls;
-using HandyControl.Data;
-using HandyControl.Themes;
-using HandyControl.Tools;
-using ModernWpf;
+﻿using HandyControl.Themes;
 using System.Windows;
 
 namespace HandyDoc
 {
     public partial class App : Application
     {
-        public App()
+        internal void UpdateTheme(ApplicationTheme theme)
         {
-            GlobalDataHelper<AppConfig>.Init();
-        }
-
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            base.OnStartup(e);
-            var boot = new Bootstrapper();
-            boot.Run();
-            UpdateSkin(GlobalDataHelper<AppConfig>.Config.Skin);
-        }
-
-        internal void UpdateSkin(SkinType skin)
-        {
-            SharedResourceDictionary.SharedDictionaries.Clear();
-            ResourceHelper.GetTheme("HandyTheme", Resources).Skin = skin;
-
-            ThemeManager.Current.ApplicationTheme = skin == SkinType.Dark ? ApplicationTheme.Dark : ApplicationTheme.Light;
-            Current.MainWindow?.OnApplyTemplate();
+            ThemeManager.Current.ApplicationTheme = theme;
+            ModernWpf.ThemeManager.Current.ApplicationTheme = theme == ApplicationTheme.Light ? ModernWpf.ApplicationTheme.Light : ModernWpf.ApplicationTheme.Dark;
         }
     }
 }

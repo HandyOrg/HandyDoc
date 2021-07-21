@@ -1,9 +1,8 @@
 ﻿<Application x:Class="HandyDoc.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:hc="https://handyorg.github.io/handycontrol"
-             xmlns:ui="http://schemas.modernwpf.com/2019"
-             xmlns:toolkit="http://schemas.modernwpf.com/toolkit">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:toolkit="http://schemas.modernwpf.com/toolkit"
+             xmlns:hc="https://handyorg.github.io/handycontrol" xmlns:ui="http://schemas.modernwpf.com/2019"
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -14,9 +13,15 @@
                         <ResourceDictionary x:Key="HighContrast" ui:ThemeDictionary.Key="HighContrast" toolkit:ToolkitThemeDictionary.Key="HighContrast" />
                     </ui:ThemeResources.ThemeDictionaries>
                 </ui:ThemeResources>
-                <ui:XamlControlsResources />
-                <hc:Theme Name="HandyTheme"/>
+                <ui:XamlControlsResources/>
+                <hc:ThemeResources/>
+                <hc:Theme/>
             </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="ui:AutoSuggestBox">
+                <Style.Resources>
+                    <Style TargetType="ListView" BasedOn="{StaticResource DefaultListViewStyle}"/>
+                </Style.Resources>
+            </Style>
             <Geometry x:Key="XamlGeometry">M2 4C0.9069372 4 0 4.9069372 0 6L0 17C0 18.093063 0.9069372 19 2 19L22 19C23.093063 19 24 18.093063 24 17L24 6C24 4.9069372 23.093063 4 22 4L2 4 z M 2 6L22 6L22 17L2 17L2 6 z M 3.0253906 9L4.2949219 11.478516L3 14L4.2617188 14L4.9980469 12.251953L5.7382812 14L7 14L5.703125 11.478516L6.9707031 9L5.7246094 9L4.9960938 10.716797L4.2714844 9L3.0253906 9 z M 8.9121094 9L7.5664062 14L8.6191406 14L8.8769531 13L10.246094 13L10.505859 14L11.566406 14L10.214844 9L8.9121094 9 z M 12 9L12 13.976562L13 13.976562L13 11L14.117188 13.976562L14.876953 13.976562L16 11L16 13.976562L16.998047 13.976562L17 13.976562L17 9L15.542969 9L14.501953 12.599609L13.457031 9L12 9 z M 18 9L18 14L21 14L21 13L19 13L19 9L18 9 z M 9.5605469 10.353516L9.9863281 12L9.1347656 12L9.5605469 10.353516 z</Geometry>
             <Geometry x:Key="PaletteGeometry">M12 2C6.241 2 1.6193906 6.8668906 2.0253906 12.712891C2.3923906 18.001891 7.0056406 22 12.306641 22L13 22C14.105 22 15 21.105 15 20L15 17C15 15.895 15.895 15 17 15L20 15C21.105 15 22 14.105 22 13L22 12.306641C22 7.0056406 18.002844 2.3923906 12.714844 2.0253906C12.474844 2.0083906 12.236 2 12 2 z M 12 4C12.19 4 12.381219 4.0065313 12.574219 4.0195312C16.738219 4.3085313 20 7.9486406 20 12.306641L20 13L17 13C14.794 13 13 14.794 13 17L13 20L12.306641 20C7.9486406 20 4.3075312 16.737219 4.0195312 12.574219C3.8635312 10.324219 4.6194375 8.1839219 6.1484375 6.5449219C7.6794375 4.9039219 9.758 4 12 4 z M 12.5 5 A 1.5 1.5 0 0 0 11 6.5 A 1.5 1.5 0 0 0 12.5 8 A 1.5 1.5 0 0 0 14 6.5 A 1.5 1.5 0 0 0 12.5 5 z M 8.5 6 A 1.5 1.5 0 0 0 7 7.5 A 1.5 1.5 0 0 0 8.5 9 A 1.5 1.5 0 0 0 10 7.5 A 1.5 1.5 0 0 0 8.5 6 z M 16.5 7 A 1.5 1.5 0 0 0 15 8.5 A 1.5 1.5 0 0 0 16.5 10 A 1.5 1.5 0 0 0 18 8.5 A 1.5 1.5 0 0 0 16.5 7 z M 6.5 10 A 1.5 1.5 0 0 0 5 11.5 A 1.5 1.5 0 0 0 6.5 13 A 1.5 1.5 0 0 0 8 11.5 A 1.5 1.5 0 0 0 6.5 10 z M 10 14 A 2 2 0 0 0 8 16 A 2 2 0 0 0 10 18 A 2 2 0 0 0 12 16 A 2 2 0 0 0 10 14 z</Geometry>
             <Geometry x:Key="InterActivityGeometry">M3 3C1.895 3 1 3.895 1 5L1 17C1 18.105 1.895 19 3 19L8 19L8 21L16 21L16 19L21 19C22.105 19 23 18.105 23 17L23 5C23 3.895 22.105 3 21 3L3 3 z M 3 5L21 5L21 17L3 17L3 5 z M 5 7L5 10L11 10L11 7L5 7 z M 13 7L13 10L19 10L19 7L13 7 z M 5 12L5 15L11 15L11 12L5 12 z M 13 12L13 15L19 15L19 12L13 12 z</Geometry>
